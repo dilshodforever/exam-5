@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package reports;
+
+option go_package = "genprotos/reports";
+
+
+
+service ReportService {
+    rpc GenerateReport(GenerateReportRequest) returns (GenerateReportResponse);
+    // rpc GenerateBudgetPerformanceReport(GenerateBudgetPerformanceReportRequest) returns (GenerateBudgetPerformanceReportResponse);
+    // rpc GenerateGoalProgressReport(GenerateGoalProgressReportRequest) returns (GenerateGoalProgressReportResponse);
+}
+
+
+message GetSpending{
+    string user_id = 2;
+    float amount = 3;
+    string type = 4; 
+    string description = 5;
+    string date = 6;
+}
+message GenerateReportRequest {
+   string user_id =1;
+   string type =2;
+}
+
+message GenerateReportResponse {
+    repeated GetSpending reeports = 1;
+}
+
+// message GenerateBudgetPerformanceReportRequest {
+//     string user_id = 1;
+// }
+
+// message GenerateBudgetPerformanceReportResponse {
+//     string report = 1;
+// }
+
+// message GenerateGoalProgressReportRequest {
+//     string user_id = 1;
+// }
+
+// message GenerateGoalProgressReportResponse {
+//     string report = 1;
+// }
+

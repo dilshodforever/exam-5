@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package notifications;
+
+option go_package = "genprotos/notifications";
+
+service AccountService {
+    rpc GetAccountByid(GetNotificationByidRequest) returns (GetNotificationByidResponse);
+    rpc DeleteAccount(GetNotificationByidRequest) returns (NotificationsResponse);
+    rpc ListAccounts(Void) returns (ListNotificationResponse);
+}
+
+message GetNotificationByidRequest {
+    string user_id = 1;
+    string type =2;
+}
+
+message GetNotificationByidResponse{
+    string user_id = 1;
+    string message = 2;
+}
+
+
+message NotificationsResponse{
+    string message =1;
+    bool   success =2;
+}
+
+message Void{}
+
+
+message ListNotificationResponse{
+    repeated GetNotificationByidResponse notifications = 1;
+}

@@ -1,0 +1,1245 @@
+basePath: /
+definitions:
+  accaunts.CreateAccountRequest:
+    properties:
+      balance:
+        type: number
+      currency:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      user_id:
+        type: string
+    type: object
+  accaunts.CreateAccountResponse:
+    properties:
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  accaunts.GetAccountByidResponse:
+    properties:
+      balance:
+        type: number
+      currency:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      user_id:
+        type: string
+    type: object
+  accaunts.ListAccountsResponse:
+    properties:
+      accounts:
+        items:
+          $ref: '#/definitions/accaunts.GetAccountByidResponse'
+        type: array
+    type: object
+  accaunts.UpdateAccountRequest:
+    properties:
+      currency:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+    type: object
+  accaunts.UpdateAccountResponse:
+    properties:
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  budgets.BudgetResponse:
+    properties:
+      message:
+        type: string
+      succes:
+        type: boolean
+    type: object
+  budgets.CreateBudgetRequest:
+    properties:
+      amount:
+        type: number
+      category_id:
+        type: string
+      end_date:
+        type: string
+      period:
+        type: string
+      start_date:
+        type: string
+      user_id:
+        type: string
+    type: object
+  budgets.GetBudgetByidResponse:
+    properties:
+      amount:
+        type: number
+      category_id:
+        type: string
+      end_date:
+        type: string
+      id:
+        type: string
+      period:
+        type: string
+      start_date:
+        type: string
+      user_id:
+        type: string
+    type: object
+  budgets.ListBudgetsResponse:
+    properties:
+      budgets:
+        items:
+          $ref: '#/definitions/budgets.GetBudgetByidResponse'
+        type: array
+    type: object
+  budgets.UpdateBudgetRequest:
+    properties:
+      end_date:
+        type: string
+      id:
+        type: string
+      period:
+        type: string
+      start_date:
+        type: string
+    type: object
+  categories.CategoryResponse:
+    properties:
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  categories.CreateCategoryRequest:
+    properties:
+      name:
+        type: string
+      type:
+        type: string
+      user_id:
+        type: string
+    type: object
+  categories.GetByidCategoriesResponse:
+    properties:
+      name:
+        type: string
+      type:
+        type: string
+      user_id:
+        type: string
+    type: object
+  categories.ListCategoriesResponse:
+    properties:
+      categories:
+        items:
+          $ref: '#/definitions/categories.GetByidCategoriesResponse'
+        type: array
+    type: object
+  categories.UpdateCategoryRequest:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+    type: object
+  goals.CreateGoalRequest:
+    properties:
+      current_amount:
+        type: number
+      deadline:
+        type: string
+      name:
+        type: string
+      status:
+        type: string
+      target_amount:
+        type: number
+      user_id:
+        type: string
+    type: object
+  goals.GetGoalResponse:
+    properties:
+      current_amount:
+        type: number
+      deadline:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      status:
+        type: string
+      target_amount:
+        type: number
+      user_id:
+        type: string
+    type: object
+  goals.GoalResponse:
+    properties:
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  goals.ListGoalsResponse:
+    properties:
+      goals:
+        items:
+          $ref: '#/definitions/goals.GetGoalResponse'
+        type: array
+    type: object
+  goals.UpdateGoalRequest:
+    properties:
+      current_amount:
+        type: number
+      deadline:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      status:
+        type: string
+      target_amount:
+        type: number
+    type: object
+  notifications.GetNotificationByidResponse:
+    properties:
+      message:
+        type: string
+      user_id:
+        type: string
+    type: object
+  notifications.ListNotificationResponse:
+    properties:
+      notifications:
+        items:
+          $ref: '#/definitions/notifications.GetNotificationByidResponse'
+        type: array
+    type: object
+  notifications.NotificationsResponse:
+    properties:
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  transactions.CreateTransactionRequest:
+    properties:
+      account_id:
+        type: string
+      amount:
+        type: number
+      category_id:
+        type: string
+      date:
+        type: string
+      description:
+        type: string
+      type:
+        type: string
+      user_id:
+        type: string
+    type: object
+  transactions.GetTransactionResponse:
+    properties:
+      account_id:
+        type: string
+      amount:
+        type: number
+      category_id:
+        type: string
+      date:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      type:
+        type: string
+      user_id:
+        type: string
+    type: object
+  transactions.ListTransactionsResponse:
+    properties:
+      transactions:
+        items:
+          $ref: '#/definitions/transactions.GetTransactionResponse'
+        type: array
+    type: object
+  transactions.TransactionResponse:
+    properties:
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  transactions.UpdateTransactionRequest:
+    properties:
+      account_id:
+        type: string
+      amount:
+        type: number
+      category_id:
+        type: string
+      date:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      type:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: Dilshod's API Gateway
+  title: API Gateway
+  version: "1.0"
+paths:
+  /account/create:
+    post:
+      consumes:
+      - application/json
+      description: Create a new account
+      parameters:
+      - description: Account details
+        in: body
+        name: account
+        required: true
+        schema:
+          $ref: '#/definitions/accaunts.CreateAccountRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Account created successfully
+          schema:
+            $ref: '#/definitions/accaunts.CreateAccountResponse'
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "500":
+          description: Error while creating account
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Create Account
+      tags:
+      - Account
+  /account/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Delete an account by ID
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Account deleted successfully
+          schema:
+            $ref: '#/definitions/accaunts.UpdateAccountResponse'
+        "400":
+          description: Missing or invalid ID
+          schema:
+            type: string
+        "500":
+          description: Error while deleting account
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Delete Account
+      tags:
+      - Account
+  /account/get/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get details of an account by ID
+      parameters:
+      - description: Account ID
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Account details
+          schema:
+            $ref: '#/definitions/accaunts.GetAccountByidResponse'
+        "400":
+          description: Missing or invalid ID
+          schema:
+            type: string
+        "500":
+          description: Error while fetching account
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Get Account by ID
+      tags:
+      - Account
+  /account/list:
+    get:
+      consumes:
+      - application/json
+      description: Get a list of all accounts based on the provided query parameters
+      parameters:
+      - description: Name of the account
+        example: '"Savings"'
+        in: query
+        name: name
+        type: string
+      - description: Type of the account
+        example: '"Checking"'
+        in: query
+        name: type
+        type: string
+      - description: Balance of the account
+        example: 1000.5
+        in: query
+        name: balance
+        type: number
+      - description: Currency of the account
+        example: '"USD"'
+        in: query
+        name: currency
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of accounts
+          schema:
+            $ref: '#/definitions/accaunts.ListAccountsResponse'
+        "500":
+          description: Error while fetching accounts
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: List Accounts
+      tags:
+      - Account
+  /account/update:
+    put:
+      consumes:
+      - application/json
+      description: Update details of an account
+      parameters:
+      - description: Updated account details
+        in: body
+        name: account
+        required: true
+        schema:
+          $ref: '#/definitions/accaunts.UpdateAccountRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Account updated successfully
+          schema:
+            $ref: '#/definitions/accaunts.UpdateAccountResponse'
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "500":
+          description: Error while updating account
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Update Account
+      tags:
+      - Account
+  /budget/create:
+    post:
+      consumes:
+      - application/json
+      description: Create a new budget
+      parameters:
+      - description: Budget details
+        in: body
+        name: budget
+        required: true
+        schema:
+          $ref: '#/definitions/budgets.CreateBudgetRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Budget created successfully
+          schema:
+            $ref: '#/definitions/budgets.BudgetResponse'
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "500":
+          description: Error while creating budget
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Create Budget
+      tags:
+      - Budget
+  /budget/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a budget by ID
+      parameters:
+      - description: Budget ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Budget deleted successfully
+          schema:
+            $ref: '#/definitions/budgets.BudgetResponse'
+        "400":
+          description: Missing or invalid ID
+          schema:
+            type: string
+        "500":
+          description: Error while deleting budget
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Delete Budget
+      tags:
+      - Budget
+  /budget/get/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get details of a budget by ID
+      parameters:
+      - description: Budget ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Budget details
+          schema:
+            $ref: '#/definitions/budgets.GetBudgetByidResponse'
+        "400":
+          description: Missing or invalid ID
+          schema:
+            type: string
+        "500":
+          description: Error while fetching budget
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Get Budget by ID
+      tags:
+      - Budget
+  /budget/list:
+    get:
+      consumes:
+      - application/json
+      description: Get a list of all budgets based on the provided query parameters
+      parameters:
+      - description: User ID
+        example: '"user123"'
+        in: query
+        name: user_id
+        type: string
+      - description: Category ID
+        example: '"category456"'
+        in: query
+        name: category_id
+        type: string
+      - description: Amount
+        example: 1500.75
+        in: query
+        name: amount
+        type: number
+      - description: Period
+        example: '"monthly"'
+        in: query
+        name: period
+        type: string
+      - description: Start date (YYYY-MM-DD)
+        example: '"2024-01-01"'
+        in: query
+        name: start_date
+        type: string
+      - description: End date (YYYY-MM-DD)
+        example: '"2024-12-31"'
+        in: query
+        name: end_date
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of budgets
+          schema:
+            $ref: '#/definitions/budgets.ListBudgetsResponse'
+        "500":
+          description: Error while fetching budgets
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: List Budgets
+      tags:
+      - Budget
+  /budget/update:
+    put:
+      consumes:
+      - application/json
+      description: Update details of a budget
+      parameters:
+      - description: Updated budget details
+        in: body
+        name: budget
+        required: true
+        schema:
+          $ref: '#/definitions/budgets.UpdateBudgetRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Budget updated successfully
+          schema:
+            $ref: '#/definitions/budgets.BudgetResponse'
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "500":
+          description: Error while updating budget
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Update Budget
+      tags:
+      - Budget
+  /category/create:
+    post:
+      consumes:
+      - application/json
+      description: Create a new category
+      parameters:
+      - description: Category details
+        in: body
+        name: category
+        required: true
+        schema:
+          $ref: '#/definitions/categories.CreateCategoryRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Category created successfully
+          schema:
+            $ref: '#/definitions/categories.CategoryResponse'
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "500":
+          description: Error while creating category
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Create Category
+      tags:
+      - Category
+  /category/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a category by ID
+      parameters:
+      - description: Category ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Category deleted successfully
+          schema:
+            $ref: '#/definitions/categories.CategoryResponse'
+        "400":
+          description: Missing or invalid ID
+          schema:
+            type: string
+        "500":
+          description: Error while deleting category
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Delete Category
+      tags:
+      - Category
+  /category/get/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get details of a category by ID
+      parameters:
+      - description: Category ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Category details
+          schema:
+            $ref: '#/definitions/categories.GetByidCategoriesResponse'
+        "400":
+          description: Missing or invalid ID
+          schema:
+            type: string
+        "500":
+          description: Error while fetching category
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Get Category by ID
+      tags:
+      - Category
+  /category/list:
+    get:
+      consumes:
+      - application/json
+      description: Get a list of all categories based on the provided query parameters
+      parameters:
+      - description: User ID
+        example: '"user123"'
+        in: query
+        name: user_id
+        type: string
+      - description: Name of the category
+        example: '"Groceries"'
+        in: query
+        name: name
+        type: string
+      - description: Type of the category
+        example: '"Expense"'
+        in: query
+        name: type
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of categories
+          schema:
+            $ref: '#/definitions/categories.ListCategoriesResponse'
+        "500":
+          description: Error while fetching categories
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: List Categories
+      tags:
+      - Category
+  /category/update:
+    put:
+      consumes:
+      - application/json
+      description: Update details of a category
+      parameters:
+      - description: Updated category details
+        in: body
+        name: category
+        required: true
+        schema:
+          $ref: '#/definitions/categories.UpdateCategoryRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Category updated successfully
+          schema:
+            $ref: '#/definitions/categories.CategoryResponse'
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "500":
+          description: Error while updating category
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Update Category
+      tags:
+      - Category
+  /goal/create:
+    post:
+      consumes:
+      - application/json
+      description: Create a new goal
+      parameters:
+      - description: Goal details
+        in: body
+        name: goal
+        required: true
+        schema:
+          $ref: '#/definitions/goals.CreateGoalRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Goal created successfully
+          schema:
+            $ref: '#/definitions/goals.GoalResponse'
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "500":
+          description: Error while creating goal
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Create Goal
+      tags:
+      - Goal
+  /goal/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a goal by ID
+      parameters:
+      - description: Goal ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Goal deleted successfully
+          schema:
+            $ref: '#/definitions/goals.GoalResponse'
+        "400":
+          description: Missing or invalid ID
+          schema:
+            type: string
+        "500":
+          description: Error while deleting goal
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Delete Goal
+      tags:
+      - Goal
+  /goal/get/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve details of a goal by ID
+      parameters:
+      - description: Goal ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Goal details
+          schema:
+            $ref: '#/definitions/goals.GetGoalResponse'
+        "400":
+          description: Missing or invalid ID
+          schema:
+            type: string
+        "500":
+          description: Error while fetching goal
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Get Goal by ID
+      tags:
+      - Goal
+  /goal/list:
+    get:
+      consumes:
+      - application/json
+      description: Get a list of all goals based on the provided query parameters
+      parameters:
+      - description: User ID
+        example: '"user123"'
+        in: query
+        name: user_id
+        type: string
+      - description: Name of the goal
+        example: '"Save for vacation"'
+        in: query
+        name: name
+        type: string
+      - description: Target amount
+        example: 5000
+        in: query
+        name: target_amount
+        type: number
+      - description: Current amount
+        example: 1500
+        in: query
+        name: current_amount
+        type: number
+      - description: Deadline (YYYY-MM-DD)
+        example: '"2024-12-31"'
+        in: query
+        name: deadline
+        type: string
+      - description: Status of the goal
+        example: '"In Progress"'
+        in: query
+        name: status
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of goals
+          schema:
+            $ref: '#/definitions/goals.ListGoalsResponse'
+        "500":
+          description: Error while fetching goals
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: List Goals
+      tags:
+      - Goal
+  /goal/update:
+    put:
+      consumes:
+      - application/json
+      description: Update details of a goal
+      parameters:
+      - description: Updated goal details
+        in: body
+        name: goal
+        required: true
+        schema:
+          $ref: '#/definitions/goals.UpdateGoalRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Goal updated successfully
+          schema:
+            $ref: '#/definitions/goals.GoalResponse'
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "500":
+          description: Error while updating goal
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Update Goal
+      tags:
+      - Goal
+  /notifications/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a notification by user_id
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Notification deleted successfully
+          schema:
+            $ref: '#/definitions/notifications.NotificationsResponse'
+        "404":
+          description: Notification not found
+          schema:
+            type: string
+        "500":
+          description: Error while deleting notification
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Delete Notification
+      tags:
+      - Notification
+  /notifications/get:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a notification by user_id
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Notification retrieved successfully
+          schema:
+            $ref: '#/definitions/notifications.GetNotificationByidResponse'
+        "404":
+          description: Notification not found
+          schema:
+            type: string
+        "500":
+          description: Error while retrieving notification
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Get Notification
+      tags:
+      - Notification
+  /notifications/getlist:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of all notifications
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of notifications retrieved successfully
+          schema:
+            $ref: '#/definitions/notifications.ListNotificationResponse'
+        "500":
+          description: Error while retrieving notifications
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: List Notifications
+      tags:
+      - Notification
+  /transaction/create:
+    post:
+      consumes:
+      - application/json
+      description: Create a new transaction
+      parameters:
+      - description: Transaction details
+        in: body
+        name: transaction
+        required: true
+        schema:
+          $ref: '#/definitions/transactions.CreateTransactionRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Transaction created successfully
+          schema:
+            $ref: '#/definitions/transactions.TransactionResponse'
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "500":
+          description: Error while creating transaction
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Create Transaction
+      tags:
+      - Transaction
+  /transaction/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a transaction by ID
+      parameters:
+      - description: Transaction ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Transaction deleted successfully
+          schema:
+            $ref: '#/definitions/transactions.TransactionResponse'
+        "400":
+          description: Missing or invalid ID
+          schema:
+            type: string
+        "500":
+          description: Error while deleting transaction
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Delete Transaction
+      tags:
+      - Transaction
+  /transaction/get/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve details of a transaction by ID
+      parameters:
+      - description: Transaction ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Transaction details
+          schema:
+            $ref: '#/definitions/transactions.GetTransactionResponse'
+        "400":
+          description: Missing or invalid ID
+          schema:
+            type: string
+        "500":
+          description: Error while fetching transaction
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Get Transaction by ID
+      tags:
+      - Transaction
+  /transaction/list:
+    get:
+      consumes:
+      - application/json
+      description: Get a list of all transactions based on query parameters
+      parameters:
+      - description: Account ID
+        in: query
+        name: account_id
+        type: string
+      - description: Category ID
+        in: query
+        name: category_id
+        type: string
+      - description: Amount
+        in: query
+        name: amount
+        type: number
+      - description: Transaction Type
+        in: query
+        name: type
+        type: string
+      - description: Description
+        in: query
+        name: description
+        type: string
+      - description: Transaction Date
+        in: query
+        name: date
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of transactions
+          schema:
+            $ref: '#/definitions/transactions.ListTransactionsResponse'
+        "500":
+          description: Error while fetching transactions
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: List Transactions
+      tags:
+      - Transaction
+  /transaction/update:
+    put:
+      consumes:
+      - application/json
+      description: Update details of a transaction
+      parameters:
+      - description: Updated transaction details
+        in: body
+        name: transaction
+        required: true
+        schema:
+          $ref: '#/definitions/transactions.UpdateTransactionRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Transaction updated successfully
+          schema:
+            $ref: '#/definitions/transactions.TransactionResponse'
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "500":
+          description: Error while updating transaction
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Update Transaction
+      tags:
+      - Transaction
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

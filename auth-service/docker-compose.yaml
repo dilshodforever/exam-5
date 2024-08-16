@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  
+  auth-service:
+    container_name: auth-service
+    build: .
+    ports:
+      - "8081:8081"
+      - "8085:8085"
+    networks:
+      - global-network
+
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - global-network
+
+networks:
+  global-network:
+    external: true
+    name: global-network
+    driver: bridge
+
+volumes:
+  db:
+  redis-data:
+    driver: local

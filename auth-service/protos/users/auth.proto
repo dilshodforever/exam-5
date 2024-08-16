@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "genprotos/auth";
+
+// Auth Service Definition
+service AuthService {
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc ForgotPassword(ForgotPasswordRequest) returns (ForgotPasswordResponse);
+  rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse);
+}
+
+
+message Register{
+  string name = 1;
+  string email = 2;
+  string password = 3;
+  string phone_number=4;
+}
+
+// Register Request and Response
+message RegisterRequest {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+  string phone_number=4;
+  string role =5;
+  string token =6;
+}
+
+
+message RegisterResponse {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  string phone_number = 4;
+  string created_at = 5;
+  string role = 6;
+}
+
+// Login Request and Response
+message LoginRequest {
+  string name = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string message =1;
+  bool success =2;
+  string id =3;
+}
+
+
+
+// Forgot Password Request and Response
+message ForgotPasswordRequest {
+  string email = 1;
+}
+
+message ForgotPasswordResponse {
+  string message = 1;
+}
+
+// Reset Password Request and Response
+message ResetPasswordRequest {
+  string email_password = 1;
+  string new_password = 2;
+  string email=3;
+  string username=4;
+}
+
+message ResetPassword {
+  string email_password = 1;
+  string new_password = 2;
+}
+
+message ResetPasswordResponse {
+  string message = 1;
+}
