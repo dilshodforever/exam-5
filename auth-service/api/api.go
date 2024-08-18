@@ -45,7 +45,7 @@ func NewGin(h *handler.Handler) *gin.Engine {
 		a.POST("/forgot-password", h.ForgotPassword)
 		a.PUT("/reset-password", h.ResetPassword)
 	}
-
+//
 	u := r.Group("/user")
 	{
 		u.GET("/profile", h.GetProfile)
